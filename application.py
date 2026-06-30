@@ -29,10 +29,16 @@ if st.sidebar.button("Predict Charges"):
     st.write("Smoker :", smoker)
     st.write("Region :", region)
 
-    myinput = pd.DataFrame(
-        [[age, sex, bmi, children, smoker, region]],
-        columns=["age", "sex", "bmi", "children", "smoker", "region"]
-    )
+    myinput = pd.DataFrame({
+        "age": [age],
+        "bmi": [bmi],
+        "children": [children],
+        "sex_male": [1 if sex == "male" else 0],
+        "smoker_yes": [1 if smoker == "yes" else 0],
+        "region_northwest": [1 if region == "northwest" else 0],
+        "region_southeast": [1 if region == "southeast" else 0],
+        "region_southwest": [1 if region == "southwest" else 0]
+    })
 
     st.write("### Model Expected Features")
     if hasattr(model, "feature_names_in_"):
@@ -46,4 +52,4 @@ if st.sidebar.button("Predict Charges"):
         result = model.predict(myinput)
         st.success(f"Estimated Medical Charges : ₹ {result[0]:.2f}")
     except Exception as e:
-        st.error(str(e))
+        st.error(f"Prediction Error: {e}")
