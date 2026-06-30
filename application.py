@@ -29,12 +29,21 @@ if st.sidebar.button("Predict Charges"):
     st.write("Smoker :", smoker)
     st.write("Region :", region)
 
-    columns = ["age", "sex", "bmi", "children", "smoker", "region"]
+    myinput = pd.DataFrame(
+        [[age, sex, bmi, children, smoker, region]],
+        columns=["age", "sex", "bmi", "children", "smoker", "region"]
+    )
 
-    myinput = [[age, sex, bmi, children, smoker, region]]
+    st.write("### Model Expected Features")
+    if hasattr(model, "feature_names_in_"):
+        st.write(list(model.feature_names_in_))
 
-    myinput = pd.DataFrame(myinput, columns=columns)
+    st.write("### Input Features")
+    st.write(list(myinput.columns))
+    st.write(myinput)
 
-    result = model.predict(myinput)
-
-    st.success("Estimated Medical Charges : ₹ {:.2f}".format(result[0]))
+    try:
+        result = model.predict(myinput)
+        st.success(f"Estimated Medical Charges : ₹ {result[0]:.2f}")
+    except Exception as e:
+        st.error(str(e))
