@@ -21,7 +21,7 @@ region = st.sidebar.selectbox("Select Region", sorted(df["region"].unique()))
 
 if st.sidebar.button("Predict Charges"):
 
-    st.write("### Patient Details")
+    st.write("## Patient Details")
     st.write("Age :", age)
     st.write("Gender :", sex)
     st.write("BMI :", bmi)
@@ -40,16 +40,6 @@ if st.sidebar.button("Predict Charges"):
         "region_southwest": [1 if region == "southwest" else 0]
     })
 
-    st.write("### Model Expected Features")
-    if hasattr(model, "feature_names_in_"):
-        st.write(list(model.feature_names_in_))
+    result = model.predict(myinput)
 
-    st.write("### Input Features")
-    st.write(list(myinput.columns))
-    st.write(myinput)
-
-    try:
-        result = model.predict(myinput)
-        st.success(f"Estimated Medical Charges : ₹ {result[0]:.2f}")
-    except Exception as e:
-        st.error(f"Prediction Error: {e}")
+    st.success(f"Estimated Medical Charges : ₹ {result[0]:.2f}")
