@@ -212,14 +212,14 @@ c1,c2,c3,c4 = st.columns(4)
 with c1:
     st.markdown("""
     <div class='card'>
-    <div class='metric'>🧑<br>Patient</div>
+    <div class='metric'>🧑Patient</div>
     </div>
     """,unsafe_allow_html=True)
 
 with c2:
     st.markdown("""
     <div class='card'>
-    <div class='metric'>❤️<br>Health</div>
+    <div class='metric'>❤️Health</div>
     </div>
     """,unsafe_allow_html=True)
 
@@ -227,14 +227,14 @@ with c3:
     st.markdown("""
     <div class='card'>
     <div class='metric'>🩺
-	<br>Diagnosis</div>
+	Diagnosis</div>
     </div>
     """,unsafe_allow_html=True)
 
 with c4:
     st.markdown("""
     <div class='card'>
-    <div class='metric'>💰<br>
+    <div class='metric'>💰
 	Insurance</div>
     </div>
     """,unsafe_allow_html=True)
