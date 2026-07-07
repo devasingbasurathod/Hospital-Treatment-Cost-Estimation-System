@@ -226,14 +226,16 @@ with c2:
 with c3:
     st.markdown("""
     <div class='card'>
-    <div class='metric'>🩺<br>Diagnosis</div>
+    <div class='metric'>🩺
+	<br>Diagnosis</div>
     </div>
     """,unsafe_allow_html=True)
 
 with c4:
     st.markdown("""
     <div class='card'>
-    <div class='metric'>💰<br>Insurance</div>
+    <div class='metric'>💰<br>
+	Insurance</div>
     </div>
     """,unsafe_allow_html=True)
 
