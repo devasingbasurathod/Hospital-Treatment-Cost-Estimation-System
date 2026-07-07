@@ -154,7 +154,7 @@ border:1px solid rgba(255,255,255,.2);
 st.markdown("""
 <div class='hero'>
 <h1>🩺 Healthcare Cost Prediction</h1>
-<p>AI Powered Medical Insurance Cost Estimation System</p>
+<p>Medical Insurance Cost Estimation System</p>
 
 <div class="wave">
 <span></span><span></span><span></span><span></span><span></span>
@@ -307,7 +307,7 @@ st.markdown("<br>",unsafe_allow_html=True)
 st.markdown("""
 <div style="text-align:center;color:white;">
 <hr>
-<h4>🏥 AI Healthcare Cost Prediction System</h4>
+<h4>🏥Healthcare Cost Prediction System</h4>
 <p>Made with ❤️ using Streamlit & Machine Learning</p>
 </div>
 """,unsafe_allow_html=True)
